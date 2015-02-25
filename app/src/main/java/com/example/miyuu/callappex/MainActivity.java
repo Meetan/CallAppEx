@@ -36,9 +36,8 @@ public class MainActivity extends ActionBarActivity {
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(
                 getApplicationContext(), android.R.layout.simple_list_item_1, list);
 
-        GridView gridView = (GridView) findViewById(R.id.gridView);
+        gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(adapter);
-        gridView.setNumColumns(list.size()/2);
 
     }
 
