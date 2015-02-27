@@ -1,6 +1,7 @@
 package com.example.miyuu.callappex;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +27,11 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.voice2,
     };
 
-    public static class ViewHolder{
+    public static class ViewHolder {
         public ImageView imageView;
     }
 
-    public ImageAdapter(Context context){
+    public ImageAdapter(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -40,7 +41,7 @@ public class ImageAdapter extends BaseAdapter {
         return ImageArray.length;
     }
 
-    public Object getItem(int position){
+    public Object getItem(int position) {
         return ImageArray[position];
     }
 
@@ -49,20 +50,28 @@ public class ImageAdapter extends BaseAdapter {
         return position;
     }
 
-    public View getView (int position, View convertView, ViewGroup paent){
+    //cuatomviewじゃないとできないの？
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        setMeasuredDimension(getMeasuredWidth(), getMeasuredWidth());
+    }
+
+    public View getView(int position, View convertView, ViewGroup paent) {
+
 
         ViewHolder holder;
-        if (convertView == null){
+        if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.grid_item, null);
             holder = new ViewHolder();
-            holder.imageView = (ImageView)convertView.findViewById(R.id.gridimg);
-        }else {
-            holder = (ViewHolder)convertView.getTag();
+            holder.imageView = (ImageView) convertView.findViewById(R.id.gridimg);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
         convertView.setTag(holder);
         holder.imageView.setImageResource(ImageArray[position]);
-        return  convertView;
-    }
+        return convertView;
 
 /*
 
@@ -95,4 +104,10 @@ public class ImageAdapter extends BaseAdapter {
         return super.onOptionsItemSelected(item);
     }
     */
+    }
+
 }
+
+
+
+
