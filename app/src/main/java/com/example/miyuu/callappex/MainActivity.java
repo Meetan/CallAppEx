@@ -1,14 +1,10 @@
 package com.example.miyuu.callappex;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
-
-import java.util.ArrayList;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -19,26 +15,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //アレイアダプタ作る
-        ArrayList<String> list = new ArrayList<String>();
-
-        list.add("A");
-        list.add("B");
-        list.add("C");
-        list.add("D");
-        list.add("E");
-        list.add("F");
-        list.add("G");
-        list.add("H");
-        list.add("I");
-        list.add("J");
-
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(
-                getApplicationContext(), android.R.layout.simple_list_item_1, list);
-
-        gridView = (GridView) findViewById(R.id.gridView);
-        gridView.setAdapter(adapter);
-
+        gridView = (GridView)findViewById(R.id.gridView);
+        gridView.setAdapter(new ImageAdapter(this));
     }
 
 
