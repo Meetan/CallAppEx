@@ -13,8 +13,10 @@ public class ImageAdapter extends BaseAdapter {
     private LayoutInflater mLayoutInflater;
 
 
-    private Integer[] ImageArray = {
+    private int[] ImageArray = {
             R.drawable.bell1,
+
+
             R.drawable.bell2,
             R.drawable.girl,
             R.drawable.boyl,
@@ -49,9 +51,10 @@ public class ImageAdapter extends BaseAdapter {
 
     public View getView (int position, View convertView, ViewGroup paent){
 
-        ViewHolder holder;
+        ViewHolder holder = null;
         if (convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.grid_item, null);
+            convertView.setTag(holder);
             holder = new ViewHolder();
             holder.imageView = (ImageView)convertView.findViewById(R.id.gridimg);
         }else {
