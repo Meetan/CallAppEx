@@ -51,16 +51,15 @@ public class ImageAdapter extends BaseAdapter {
 
     public View getView (int position, View convertView, ViewGroup paent){
 
-        ViewHolder holder = null;
+        ViewHolder holder;
         if (convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.grid_item, null);
-            convertView.setTag(holder);
             holder = new ViewHolder();
             holder.imageView = (ImageView)convertView.findViewById(R.id.gridimg);
         }else {
             holder = (ViewHolder)convertView.getTag();
         }
-
+        convertView.setTag(holder);
         holder.imageView.setImageResource(ImageArray[position]);
         return  convertView;
     }
