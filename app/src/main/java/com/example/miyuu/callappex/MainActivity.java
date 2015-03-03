@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import java.util.Random;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -35,9 +36,8 @@ public class MainActivity extends ActionBarActivity {
     //9
     int soundIDrec;
 
-    int random;
+    int rannum;
     String ranmusic;
-
 
 
     @Override
@@ -66,8 +66,8 @@ public class MainActivity extends ActionBarActivity {
                 } else if (position == 5) {
                     soundPool.play(soundIDoji, 1.0F, 1.0F, 0, 0, 1.0F);
                 } else if (position == 6) {
-                    random = (int) (Math.floor(Math.random() * (3)));
-                    Log.i("", "random=" + random);
+                    Random random = new Random();
+                    rannum = random.nextInt(3);
                     soundPool.play(soundIDvoice1, 1.0F, 1.0F, 0, 0, 1.0F);
                 } else if (position == 7) {
                     soundPool.play(soundIDvoice2, 1.0F, 1.0F, 0, 0, 1.0F);
@@ -117,9 +117,9 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-        if (random == 0){
+        if (rannum == 0){
             ranmusic = R.raw.bell1;
-        }else if (random == 1){
+        }else if (rannum == 1){
             soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
         }else {
             soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.boy1, 0);
