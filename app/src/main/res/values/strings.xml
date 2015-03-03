@@ -8,10 +8,5 @@
     <string name="title_activity_record">RecordActivity</string>
     <string name="title_activity_top">TopActivity</string>
 
-    <array name="ranvoice">
-        <item>@raw/boy1</item>
-        <item>@raw/girl1</item>
-        <item>@raw/bell1</item>
-    </array>
 
 </resources>
