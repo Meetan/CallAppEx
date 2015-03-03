@@ -35,6 +35,9 @@ public class MainActivity extends ActionBarActivity {
     //9
     int soundIDrec;
 
+    int random;
+    String ranmusic;
+
 
 
     @Override
@@ -63,6 +66,8 @@ public class MainActivity extends ActionBarActivity {
                 } else if (position == 5) {
                     soundPool.play(soundIDoji, 1.0F, 1.0F, 0, 0, 1.0F);
                 } else if (position == 6) {
+                    random = (int) (Math.floor(Math.random() * (3)));
+                    Log.i("", "random=" + random);
                     soundPool.play(soundIDvoice1, 1.0F, 1.0F, 0, 0, 1.0F);
                 } else if (position == 7) {
                     soundPool.play(soundIDvoice2, 1.0F, 1.0F, 0, 0, 1.0F);
@@ -93,6 +98,9 @@ public class MainActivity extends ActionBarActivity {
 
         String path = Environment.getExternalStorageDirectory().getPath()  + "/audio.3gp";
 
+
+
+
         soundIDbell1 = soundPool.load(getApplicationContext(), R.raw.bell2, 0);
         soundIDbell2 = soundPool.load(getApplicationContext(), R.raw.bell1, 0);
         soundIDgirl = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
@@ -105,6 +113,17 @@ public class MainActivity extends ActionBarActivity {
         */
         soundIDrec = soundPool.load(path, 0);
 
+        soundIDvoice1 = soundPool.load(ranmusic, 0);
+
+
+
+        if (random == 0){
+            ranmusic = R.raw.bell1;
+        }else if (random == 1){
+            soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
+        }else {
+            soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.boy1, 0);
+        }
 
     }
 
