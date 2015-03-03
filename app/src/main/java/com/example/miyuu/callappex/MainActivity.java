@@ -68,6 +68,7 @@ public class MainActivity extends ActionBarActivity {
                 } else if (position == 6) {
                     Random random = new Random();
                     rannum = random.nextInt(3);
+                    Log.i("","rannum=" + rannum);
                     soundPool.play(soundIDvoice1, 1.0F, 1.0F, 0, 0, 1.0F);
                 } else if (position == 7) {
                     soundPool.play(soundIDvoice2, 1.0F, 1.0F, 0, 0, 1.0F);
@@ -113,12 +114,12 @@ public class MainActivity extends ActionBarActivity {
         */
         soundIDrec = soundPool.load(path, 0);
 
-        soundIDvoice1 = soundPool.load(ranmusic, 0);
+       // soundIDvoice1 = soundPool.load(ranmusic, 0);
 
 
 
         if (rannum == 0){
-            ranmusic = R.raw.bell1;
+            soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.bell1, 0);
         }else if (rannum == 1){
             soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
         }else {
