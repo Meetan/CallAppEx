@@ -3,6 +3,7 @@ package com.example.miyuu.callappex;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -15,12 +16,24 @@ public class MainActivity extends ActionBarActivity {
 
     GridView gridView;
     private SoundPool soundPool;
-    int soundID;
-    int soundID2;
-    int soundID3;
-    int soundID4;
-    int soundID5;
-    int soundID6;
+    //1
+    int soundIDbell1;
+    //2
+    int soundIDbell2;
+    //3
+    int soundIDgirl;
+    //4
+    int soundIDboy;
+    //5
+    int soundIDoba;
+    //6
+    int soundIDoji;
+    //7
+    int soundIDvoice1;
+    //8
+    int soundIDvoice2;
+    //9
+    int soundIDrec;
 
 
 
@@ -35,21 +48,32 @@ public class MainActivity extends ActionBarActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 Log.d("", "クリックしたよ");
-                Log.d("position",String.valueOf(position));
+                Log.d("position", String.valueOf(position));
 
                 if (position == 0) {
-                    soundPool.play(soundID, 1.0F, 1.0F, 0, 0, 1.0F);
-                } else if (position == 1){
-                    soundPool.play(soundID2, 1.0F, 1.0F, 0, 0, 1.0F);
-                }else if (position == 2) {
-                    soundPool.play(soundID3, 1.0F, 1.0F, 0, 0, 1.0F);
-                }else if (position == 3){
-                    soundPool.play(soundID4, 1.0F, 1.0F, 0, 0, 1.0F);
+                    soundPool.play(soundIDbell1, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 1) {
+                    soundPool.play(soundIDbell2, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 2) {
+                    soundPool.play(soundIDgirl, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 3) {
+                    soundPool.play(soundIDboy, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 4) {
+                    soundPool.play(soundIDoba, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 5) {
+                    soundPool.play(soundIDoji, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 6) {
+                    soundPool.play(soundIDvoice1, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 7) {
+                    soundPool.play(soundIDvoice2, 1.0F, 1.0F, 0, 0, 1.0F);
+                } else if (position == 8) {
+                    soundPool.play(soundIDrec, 1.0F, 1.0F, 0, 0, 1.0F);
                 }
             }
+
         });
 
-        }
+    }
 
     @Override
     protected void onResume(){
@@ -67,10 +91,20 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        soundID = soundPool.load(getApplicationContext(), R.raw.bell2, 0);
-        soundID2 = soundPool.load(getApplicationContext(), R.raw.bell1, 0);
-        soundID3 = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
-        soundID4 = soundPool.load(getApplicationContext(), R.raw.boy1, 0);
+        String path = Environment.getExternalStorageDirectory().getPath()  + "/audio.3gp";
+
+        soundIDbell1 = soundPool.load(getApplicationContext(), R.raw.bell2, 0);
+        soundIDbell2 = soundPool.load(getApplicationContext(), R.raw.bell1, 0);
+        soundIDgirl = soundPool.load(getApplicationContext(), R.raw.girl1, 0);
+        soundIDboy = soundPool.load(getApplicationContext(), R.raw.boy1, 0);
+        /*TODO
+        soundIDoba = soundPool.load(getApplicationContext(), R.raw., 0);
+        soundIDoji = soundPool.load(getApplicationContext(), R.raw., 0);
+        soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw., 0);
+        soundIDvoice2 = soundPool.load(getApplicationContext(), R.raw., 0);
+        */
+        soundIDrec = soundPool.load(path, 0);
+
 
     }
 

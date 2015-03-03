@@ -15,8 +15,6 @@ public class ImageAdapter extends BaseAdapter {
 
     private int[] ImageArray = {
             R.drawable.bell1,
-
-
             R.drawable.bell2,
             R.drawable.girl,
             R.drawable.boyl,
@@ -24,6 +22,8 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.oji,
             R.drawable.voice1,
             R.drawable.voice2,
+            R.drawable.rec,
+
     };
 
     public static class ViewHolder {

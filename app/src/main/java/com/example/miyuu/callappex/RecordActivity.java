@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class RecordActivity extends ActionBarActivity implements View.OnClickListener {
@@ -16,6 +17,7 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
     MediaRecorder recorder;
     Button start;
     Button stop;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
                 recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
 
                 Log.d("","録音中");
+                Toast.makeText(this, "録音中……", Toast.LENGTH_LONG).show();
 
                 String filePath = Environment.getExternalStorageDirectory() + "/audio.3gp";
                 recorder.setOutputFile(filePath);
@@ -63,15 +66,48 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
             case R.id.stop:
                 recorder.stop();
                 recorder.reset();
-                recorder.release();
 
                 Log.d("","録音ストップ");
+                Toast.makeText(this, "録音完了", Toast.LENGTH_SHORT).show();
 
                 break;
         }
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        recorder.release();
+    }
+
+        /*
+
+    private void setRecorder() {
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        recorder.setOutputFile("/sdcard/audio_sample.3gp");
+
+        try {
+            recorder.prepare();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void startRecord(){
+        if (!mIsRecording){
+            try {
+                //録音開始
+                recorder
+            }
+        }
+    }
+    */
 
 
     @Override
