@@ -7,6 +7,6 @@
     <string name="title_activity_rec">RecActivity</string>
     <string name="title_activity_record">RecordActivity</string>
     <string name="title_activity_top">TopActivity</string>
-
-
+    <string name="title_activity_exp">ExpActivity</string>
+    <string name="exp">&#xA;お店の店員さんを呼びたいとき、先生を呼びたいとき、街で誰かに声をかけたいとき…声のかけづらい場面ってたくさんある！そんなときは、このよびだし君にすべてを任せよう！&#xA;何度呼び出してもなかなか来ない時もサポート。３段階イライラ機能も搭載！！！&#xA;自分オリジナルの音で呼び出したい時は、１つだけ録音ボタンから録音した音声で呼びだすことができるよ！&#xA;&#xA;ある一定数ボタンを押すと隠し機能が見つかる………かも…！？</string>
 </resources>

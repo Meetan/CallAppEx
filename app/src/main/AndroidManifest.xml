@@ -3,7 +3,7 @@
     package="com.example.miyuu.callappex" >
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,22 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-        android:name=".MainActivity"
-        android:label="よびだし君" >
-            </activity>
-
+            android:name=".MainActivity"
+            android:label="よびだし君" >
+        </activity>
         <activity
             android:name=".ImageAdapter"
             android:label="@string/title_activity_adapter" >
         </activity>
-
         <activity
             android:name=".RecordActivity"
             android:label="よびだし君" >
         </activity>
-
+        <activity
+            android:name=".ExpActivity"
+            android:label="@string/title_activity_exp" >
+        </activity>
     </application>
 
 </manifest>

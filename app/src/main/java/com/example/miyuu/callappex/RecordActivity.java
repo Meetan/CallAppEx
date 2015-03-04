@@ -34,6 +34,9 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
         stop.setOnClickListener(this);
         button.setOnClickListener(this);
 
+        recorder = new MediaRecorder();
+
+
     }
 
 
@@ -48,7 +51,7 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
     public void onClick (View v) {
         switch (v.getId()) {
             case R.id.start:
-                recorder = new MediaRecorder();
+
                 recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
                 recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
                 recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
