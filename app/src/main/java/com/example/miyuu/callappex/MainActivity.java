@@ -85,13 +85,13 @@ public class MainActivity extends ActionBarActivity {
                     //女の子
                 } else if (position == 2) {
 
-                    if (number == 30) {
-                        soundPool.play(soundIDgirl14, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else if (number < 5) {
+                    if (number < 5) {
                         soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else if (number >=5 && number <11) {
+                    }else if (number < 11){
                         soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else if (number >= 11) {
+                    }else if (number == 30) {
+                        soundPool.play(soundIDgirl14, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }else {
                         soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
                     }
 
