@@ -85,31 +85,21 @@ public class MainActivity extends ActionBarActivity {
                     //女の子
                 } else if (position == 2) {
 
-                    //普通モード
-                    if(number < 4) {
-                        soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
-
-                    //チョイおこモード
-                    }else if (number >= 4){
-                        soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
-
-                    //げきおこモード
-                    }else if (number >= 10) {
-                        soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
-
-                    //隠し機能
-                    }else if (number == 30){
+                    if (number == 30) {
                         soundPool.play(soundIDgirl14, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }else if (number < 5) {
+                        soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }else if (number >=5 && number <11) {
+                        soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }else if (number >= 11) {
+                        soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
                     }
-
-
-
 
                     //男の子
                 } else if (position == 3) {
 
                     //普通モード
-                    if(number < 4) {
+                    if(number < 5) {
                         Random random = new Random();
                         rannum = random.nextInt(3);
                         Log.i("", "rannum=" + rannum);
@@ -126,7 +116,7 @@ public class MainActivity extends ActionBarActivity {
                         }
 
                         //男の子チョイおこモード
-                    }else if (number >= 4) {
+                    }else if (number >= 5 && number <10) {
                         Random random2 = new Random();
                         rannum = random2.nextInt(3);
                         Log.i("", "rannum=" + rannum);
@@ -142,7 +132,7 @@ public class MainActivity extends ActionBarActivity {
                                 soundPool.play(soundIDboy32, 1.0F, 1.0F, 0, 0, 1.0F);
                         }
 
-                    //げきおこモード
+                        //げきおこモード
                     }else if (number >= 10) {
                         Random random3 = new Random();
                         rannum = random3.nextInt(3);
@@ -170,11 +160,11 @@ public class MainActivity extends ActionBarActivity {
                 } else if (position == 5) {
 
                     //普通モード
-                    if(number < 4) {
+                    if(number < 5) {
                         soundPool.play(soundIDoji11, 1.0F, 1.0F, 0, 0, 1.0F);
 
                         //チョイおこモード
-                    }else if (number >= 4){
+                    }else if (number >= 5 && number <10){
                         soundPool.play(soundIDoji12, 1.0F, 1.0F, 0, 0, 1.0F);
 
                         //げきおこモード
