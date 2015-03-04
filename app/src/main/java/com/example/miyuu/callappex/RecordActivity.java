@@ -1,5 +1,6 @@
 package com.example.miyuu.callappex;
 
+import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
@@ -17,6 +18,7 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
     MediaRecorder recorder;
     Button start;
     Button stop;
+    Button button;
 
 
     @Override
@@ -26,9 +28,11 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
 
         start = (Button)findViewById(R.id.start);
         stop = (Button)findViewById(R.id.stop);
+        button = (Button)findViewById(R.id.button);
 
         start.setOnClickListener(this);
         stop.setOnClickListener(this);
+        button.setOnClickListener(this);
 
     }
 
@@ -71,9 +75,15 @@ public class RecordActivity extends ActionBarActivity implements View.OnClickLis
                 Toast.makeText(this, "録音完了", Toast.LENGTH_SHORT).show();
 
                 break;
+
+            case R.id.button:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }
+
 
     @Override
     protected void onDestroy() {

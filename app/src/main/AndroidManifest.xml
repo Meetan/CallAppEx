@@ -8,11 +8,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="よびだし君"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".TopActivity"
-            android:label="@string/title_activity_top" >
+            android:label="よびだし君" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
 
         <activity
         android:name=".MainActivity"
-        android:label="@string/app_name" >
+        android:label="よびだし君" >
             </activity>
 
         <activity
@@ -32,7 +32,7 @@
 
         <activity
             android:name=".RecordActivity"
-            android:label="@string/title_activity_record" >
+            android:label="よびだし君" >
         </activity>
 
     </application>
