@@ -19,9 +19,13 @@ public class MainActivity extends ActionBarActivity {
     GridView gridView;
     private SoundPool soundPool;
     //1
-    int soundIDbell1;
+    int soundIDbell11;
+    int soundIDbell12;
+    int soundIDbell13;
     //2
-    int soundIDbell2;
+    int soundIDbell21;
+    int soundIDbell22;
+    int soundIDbell23;
     //3
     int soundIDgirl11;
     int soundIDgirl12;
@@ -42,16 +46,15 @@ public class MainActivity extends ActionBarActivity {
     int soundIDboy33;
 
     //5
-    int soundIDoba;
+    int soundIDoba11;
+    int soundIDoba12;
+    int soundIDoba13;
     //6
     int soundIDoji11;
     int soundIDoji12;
     int soundIDoji13;
     //7
-    int soundIDvoice1;
     //8
-    int soundIDvoice2;
-    //9
     int soundIDrec;
 
     int rannum;
@@ -76,30 +79,86 @@ public class MainActivity extends ActionBarActivity {
 
                 //ベル音１
                 if (position == 0) {
-                    soundPool.play(soundIDbell1, 1.0F, 1.0F, 0, 0, 1.0F);
+                    //普通モード
+                    if (number < 5) {
+                        soundPool.play(soundIDbell11, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                        //チョイおこモード
+                    } else if (number >= 5 && number < 10) {
+                        soundPool.play(soundIDbell12, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                        //げきおこモード
+                    } else if (number >= 10) {
+                        soundPool.play(soundIDbell13, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }
 
                     //ベル音２
                 } else if (position == 1) {
-                    soundPool.play(soundIDbell2, 1.0F, 1.0F, 0, 0, 1.0F);
+                        //普通モード
+                        if (number < 5) {
+                            soundPool.play(soundIDbell21, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                            //チョイおこモード
+                        } else if (number >= 5 && number < 10) {
+                            soundPool.play(soundIDbell22, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                            //げきおこモード
+                        } else if (number >= 10) {
+                            soundPool.play(soundIDbell23, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }
 
                     //女の子
                 } else if (position == 2) {
 
                     if (number < 5) {
-                        soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else if (number < 11){
-                        soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else if (number == 30) {
+                        Random random5 = new Random();
+                        rannum = random5.nextInt(2);
+                        Log.i("", "rannum=" + rannum);
+
+                        switch (rannum) {
+                            case 0:
+                                soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+                            case 1:
+                                soundPool.play(soundIDgirl21, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+                        }
+
+                    } else if (number < 11) {
+                        Random random6 = new Random();
+                        rannum = random6.nextInt(2);
+                        Log.i("", "rannum=" + rannum);
+                        switch (rannum) {
+                            case 0:
+                                soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+                            case 1:
+                                soundPool.play(soundIDgirl22, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+
+                        }
+                    } else if (number == 30) {
                         soundPool.play(soundIDgirl14, 1.0F, 1.0F, 0, 0, 1.0F);
-                    }else {
-                        soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
+                    } else {
+                        Random random7 = new Random();
+                        rannum = random7.nextInt(2);
+                        Log.i("", "rannum=" + rannum);
+                        switch (rannum) {
+                            case 0:
+                                soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+                            case 1:
+                                soundPool.play(soundIDgirl23, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
+                        }
                     }
+
 
                     //男の子
                 } else if (position == 3) {
 
                     //普通モード
-                    if(number < 5) {
+                    if (number < 5) {
                         Random random = new Random();
                         rannum = random.nextInt(3);
                         Log.i("", "rannum=" + rannum);
@@ -116,7 +175,7 @@ public class MainActivity extends ActionBarActivity {
                         }
 
                         //男の子チョイおこモード
-                    }else if (number >= 5 && number <10) {
+                    } else if (number >= 5 && number < 10) {
                         Random random2 = new Random();
                         rannum = random2.nextInt(3);
                         Log.i("", "rannum=" + rannum);
@@ -133,7 +192,7 @@ public class MainActivity extends ActionBarActivity {
                         }
 
                         //げきおこモード
-                    }else if (number >= 10) {
+                    } else if (number >= 10) {
                         Random random3 = new Random();
                         rannum = random3.nextInt(3);
                         Log.i("", "rannum=" + rannum);
@@ -147,50 +206,144 @@ public class MainActivity extends ActionBarActivity {
                                 break;
                             case 2:
                                 soundPool.play(soundIDboy33, 1.0F, 1.0F, 0, 0, 1.0F);
+                                break;
                         }
-                    }
 
+                    }
 
 
                     //おばさん
                 } else if (position == 4) {
-                    soundPool.play(soundIDoba, 1.0F, 1.0F, 0, 0, 1.0F);
+                    //普通モード
+                    if (number < 5) {
+                        soundPool.play(soundIDoba11, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                        //チョイおこモード
+                    } else if (number >= 5 && number < 10) {
+                        soundPool.play(soundIDoba12, 1.0F, 1.0F, 0, 0, 1.0F);
+
+                        //げきおこモード
+                    } else if (number >= 10) {
+                        soundPool.play(soundIDoba13, 1.0F, 1.0F, 0, 0, 1.0F);
+                    }
 
                     //おじさん
                 } else if (position == 5) {
 
                     //普通モード
-                    if(number < 5) {
+                    if (number < 5) {
                         soundPool.play(soundIDoji11, 1.0F, 1.0F, 0, 0, 1.0F);
 
                         //チョイおこモード
-                    }else if (number >= 5 && number <10){
+                    } else if (number >= 5 && number < 10) {
                         soundPool.play(soundIDoji12, 1.0F, 1.0F, 0, 0, 1.0F);
 
                         //げきおこモード
-                    }else if (number >= 10) {
+                    } else if (number >= 10) {
                         soundPool.play(soundIDoji13, 1.0F, 1.0F, 0, 0, 1.0F);
                     }
 
-
-
-                    //口１
+                    //全ランダム
                 } else if (position == 6) {
-                    soundPool.play(soundIDvoice1, 1.0F, 1.0F, 0, 0, 1.0F);
+                    Random random4 = new Random();
+                    rannum = random4.nextInt(27);
+                    Log.i("", "rannum=" + rannum);
 
-                    //口２
-                } else if (position == 7) {
-                    soundPool.play(soundIDvoice2, 1.0F, 1.0F, 0, 0, 1.0F);
-
+                    switch (rannum) {
+                        case 0:
+                            soundPool.play(soundIDbell11, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 1:
+                            soundPool.play(soundIDbell21, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 2:
+                            soundPool.play(soundIDbell13, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 3:
+                            soundPool.play(soundIDbell21, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 4:
+                            soundPool.play(soundIDbell22, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 5:
+                            soundPool.play(soundIDbell23, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 6:
+                            soundPool.play(soundIDboy11, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 7:
+                            soundPool.play(soundIDboy12, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 8:
+                            soundPool.play(soundIDboy13, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 9:
+                            soundPool.play(soundIDboy21, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 10:
+                            soundPool.play(soundIDboy22, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 11:
+                            soundPool.play(soundIDboy23, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 12:
+                            soundPool.play(soundIDboy31, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 13:
+                            soundPool.play(soundIDboy32, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 14:
+                            soundPool.play(soundIDboy33, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 15:
+                            soundPool.play(soundIDgirl11, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 16:
+                            soundPool.play(soundIDgirl12, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 17:
+                            soundPool.play(soundIDgirl13, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 18:
+                            soundPool.play(soundIDgirl21, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 19:
+                            soundPool.play(soundIDgirl22, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 20:
+                            soundPool.play(soundIDgirl23, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 21:
+                            soundPool.play(soundIDoji11, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 22:
+                            soundPool.play(soundIDoji12, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 23:
+                            soundPool.play(soundIDoji13, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 24:
+                            soundPool.play(soundIDoba11, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 25:
+                            soundPool.play(soundIDoba12, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                        case 26:
+                            soundPool.play(soundIDoba13, 1.0F, 1.0F, 0, 0, 1.0F);
+                            break;
+                    }
                     //録音
-                } else if (position == 8) {
+                }else if (position == 7) {
                     soundPool.play(soundIDrec, 1.0F, 1.0F, 0, 0, 1.0F);
                 }
             }
 
+
         });
 
     }
+
+
 
     @Override
     protected void onResume(){
@@ -210,13 +363,20 @@ public class MainActivity extends ActionBarActivity {
 
         String path = Environment.getExternalStorageDirectory().getPath()  + "/audio.3gp";
 
-        soundIDbell1 = soundPool.load(getApplicationContext(), R.raw.bell21, 0);
-        soundIDbell2 = soundPool.load(getApplicationContext(), R.raw.bell11, 0);
+        soundIDbell11 = soundPool.load(getApplicationContext(), R.raw.bell11, 0);
+        soundIDbell12 = soundPool.load(getApplicationContext(), R.raw.bell12, 0);
+        soundIDbell13 = soundPool.load(getApplicationContext(), R.raw.bell13, 0);
+        soundIDbell21 = soundPool.load(getApplicationContext(), R.raw.bell21, 0);
+        soundIDbell22 = soundPool.load(getApplicationContext(), R.raw.bell22, 0);
+        soundIDbell23 = soundPool.load(getApplicationContext(), R.raw.bell23, 0);
 
         soundIDgirl11 = soundPool.load(getApplicationContext(), R.raw.girl11, 0);
         soundIDgirl12 = soundPool.load(getApplicationContext(), R.raw.girl12, 0);
         soundIDgirl13 = soundPool.load(getApplicationContext(), R.raw.girl13, 0);
         soundIDgirl14 = soundPool.load(getApplicationContext(), R.raw.girl14, 0);
+        soundIDgirl21 = soundPool.load(getApplicationContext(), R.raw.girl21, 0);
+        soundIDgirl22 = soundPool.load(getApplicationContext(), R.raw.girl22, 0);
+        soundIDgirl23 = soundPool.load(getApplicationContext(), R.raw.girl23, 0);
 
         soundIDboy11 = soundPool.load(getApplicationContext(), R.raw.boy11, 0);
         soundIDboy12 = soundPool.load(getApplicationContext(), R.raw.boy12, 0);
@@ -227,11 +387,11 @@ public class MainActivity extends ActionBarActivity {
         soundIDboy31 = soundPool.load(getApplicationContext(), R.raw.boy31, 0);
         soundIDboy32 = soundPool.load(getApplicationContext(), R.raw.boy32, 0);
         soundIDboy33 = soundPool.load(getApplicationContext(), R.raw.boy33, 0);
-        /*TODO
-        soundIDoba = soundPool.load(getApplicationContext(), R.raw., 0);
-        soundIDvoice1 = soundPool.load(getApplicationContext(), R.raw., 0);
-        soundIDvoice2 = soundPool.load(getApplicationContext(), R.raw., 0);
-        */
+
+        soundIDoba11 = soundPool.load(getApplicationContext(), R.raw.oba11, 0);
+        soundIDoba12 = soundPool.load(getApplicationContext(), R.raw.oba12, 0);
+        soundIDoba13 = soundPool.load(getApplicationContext(), R.raw.oba13, 0);
+
         soundIDoji11 = soundPool.load(getApplicationContext(), R.raw.oji11, 0);
         soundIDoji12 = soundPool.load(getApplicationContext(), R.raw.oji12, 0);
         soundIDoji13 = soundPool.load(getApplicationContext(), R.raw.oji13, 0);

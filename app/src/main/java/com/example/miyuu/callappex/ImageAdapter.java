@@ -20,8 +20,7 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.boyl,
             R.drawable.oba,
             R.drawable.oji,
-            R.drawable.voice1,
-            R.drawable.voice2,
+            R.drawable.randum,
             R.drawable.rec,
 
     };

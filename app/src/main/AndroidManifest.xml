@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".ExpActivity"
-            android:label="@string/title_activity_exp" >
+            android:label="よびだし君"  >
         </activity>
     </application>
 
